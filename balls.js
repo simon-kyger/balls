@@ -37,11 +37,11 @@ function remainingtwoweighs(np, arg0, arg1, arg2, arg3){
 		//therefore, in order to figure out amongst the three who the culprit is, we check against the two lighter mods first.
 		//if they are equivalent, then arg0 must be heavy.
 
-		//also note: there is intentional extra space on this if block, only so that the conditions of the else if blocks line up
-		//so that it can be seen that no additional weighs were taken.
-		//we are only concerned with the relationship between arg1 and arg2 and no other calculation is made.
+		//also note:
+		//we are only concerned with the relationship between arg1 and arg2 and no other calculation (or weigh) is made, even with the else if blocks.
+		//because basically one relationship check can have three states.  either equivalent, less than, or greater than. nothing else.
 		weighs++;
-		if 		(arg1.weight == arg2.weight)
+		if 	(arg1.weight == arg2.weight)
 			message += balls.indexOf(arg0) + 1 + ' is heavier than the rest. ';
 		else if (arg1.weight < arg2.weight)
 			message += balls.indexOf(arg1) + 1 + ' is lighter than the rest. ';
@@ -52,11 +52,11 @@ function remainingtwoweighs(np, arg0, arg1, arg2, arg3){
 		//therefore, in order to figure out amongst the three who the culprit is, we check against the two heavier mods first.
 		//if they are equivalent, then arg0 must be light.
 
-		//also note: there is intentional extra space on this if block, only so that the conditions of the else if blocks line up
-		//so that it can be seen that no additional weighs were taken.
-		//we are only concerned with the relationship between arg1 and arg2 and no other calculation is made.
+		//also note:
+		//we are only concerned with the relationship between arg1 and arg2 and no other calculation (or weigh) is made, even with the else if.
+		//because basically one relationship check can have three states.  either equivalent, less than, or greater than. nothing else.
 		weighs++;
-		if 		(arg1.weight == arg2.weight)
+		if 	(arg1.weight == arg2.weight)
 			message += balls.indexOf(arg0) + 1 + ' is lighter than the rest. ';
 		else if (arg1.weight < arg2.weight)
 			message += balls.indexOf(arg2) + 1 + ' is heavier than the rest. ';
