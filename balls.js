@@ -4,7 +4,7 @@ let ball = function(){ return { weight: 0 }};
 for (let i=0; i<8; i++){
 	balls.push(new ball);
 }
-let randindex = Math.floor(Math.random()*(balls.length-1));
+let randindex = Math.floor(Math.random()*(balls.length));
 let differentweight = Math.random() > .5 ? 1 : -1;
 balls[randindex].weight = differentweight;
 let message = 'Ball ';
