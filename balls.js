@@ -25,30 +25,38 @@ if ((balls[0].weight + balls[1].weight) == (balls[2].weight + balls[3].weight)){
 function remainingtwoweighs(np, arg0, arg1, arg2, arg3){
 	weighs++;
 	if ((np.weight+arg0.weight) == (arg1.weight+arg2.weight)){
-		weighs++;
 		//if the case is that all of those are the same, then the problem has to be only with final argument
 		//check against one that IS good.  this is the easy case
+		weighs++;
 		if (np.weight < arg3.weight) 
 			message += balls.indexOf(arg3) + 1 + ' is heavier than the rest. ';
 		else
 			message += balls.indexOf(arg3) + 1 + ' is lighter than the rest. ';
 	} else if (np.weight+arg0.weight > arg1.weight+arg2.weight){
-		weighs++;
 		//in this case, arg0 is either heavier than all (because np is not a problem), or (arg1 or arg2) are lighter than the rest only;
 		//therefore, in order to figure out amongst the three who the culprit is, we check against the two lighter mods first.
 		//if they are equivalent, then arg0 must be heavy.
-		if 	(arg1.weight == arg2.weight)
+
+		//also note: there is intentional extra space on this if block, only so that the conditions of the else if blocks line up
+		//so that it can be seen that no additional weighs were taken.
+		//we are only concerned with the relationship between arg1 and arg2 and no other calculation is made.
+		weighs++;
+		if 		(arg1.weight == arg2.weight)
 			message += balls.indexOf(arg0) + 1 + ' is heavier than the rest. ';
 		else if (arg1.weight < arg2.weight)
 			message += balls.indexOf(arg1) + 1 + ' is lighter than the rest. ';
 		else if (arg1.weight > arg2.weight)
 			message += balls.indexOf(arg2) + 1 + ' is lighter than the rest. ';		
 	} else if (np.weight+arg0.weight < arg1.weight+arg2.weight){
-		weighs++;
 		//in this case, arg0 is either lighter than all (because np is not a problem), or (arg1 or arg2) are heavier than the rest only;
 		//therefore, in order to figure out amongst the three who the culprit is, we check against the two heavier mods first.
 		//if they are equivalent, then arg0 must be light.
-		if (arg1.weight == arg2.weight)
+
+		//also note: there is intentional extra space on this if block, only so that the conditions of the else if blocks line up
+		//so that it can be seen that no additional weighs were taken.
+		//we are only concerned with the relationship between arg1 and arg2 and no other calculation is made.
+		weighs++;
+		if 		(arg1.weight == arg2.weight)
 			message += balls.indexOf(arg0) + 1 + ' is lighter than the rest. ';
 		else if (arg1.weight < arg2.weight)
 			message += balls.indexOf(arg2) + 1 + ' is heavier than the rest. ';
