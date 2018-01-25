@@ -42,7 +42,7 @@ function remainingtwoweighs(np, arg0, arg1, arg2, arg3){
 		weighs++;
 		arg1.weight == 	arg2.weight ? 	message += balls.indexOf(arg0) + 1 + ' is heavier than the rest. ' : null;
 		arg1.weight < 	arg2.weight ? 	message += balls.indexOf(arg1) + 1 + ' is lighter than the rest. ' : null;
-		arg1.weight > 	arg2.weight	?	message += balls.indexOf(arg2) + 1 + ' is lighter than the rest. ' : null;
+		arg1.weight > 	arg2.weight ?	message += balls.indexOf(arg2) + 1 + ' is lighter than the rest. ' : null;
 	} else if (np.weight+arg0.weight < arg1.weight+arg2.weight){
 		//in this case, arg0 is either lighter than all (because np is not a problem), or (arg1 or arg2) are heavier than the rest only;
 		//therefore, in order to figure out amongst the three who the culprit is, we check against the two heavier mods first.
