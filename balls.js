@@ -28,40 +28,34 @@ function remainingtwoweighs(np, arg0, arg1, arg2, arg3){
 		//if the case is that all of those are the same, then the problem has to be only with final argument
 		//check against one that IS good.  this is the easy case
 		weighs++;
-		if (np.weight < arg3.weight) 
-			message += balls.indexOf(arg3) + 1 + ' is heavier than the rest. ';
-		else
-			message += balls.indexOf(arg3) + 1 + ' is lighter than the rest. ';
+		np.weight < arg3.weight ? message += balls.indexOf(arg3) + 1 + ' is heavier than the rest. ' : null;
+		np.weight > arg3.weight ? message += balls.indexOf(arg3) + 1 + ' is lighter than the rest. ' : null;
 	} else if (np.weight+arg0.weight > arg1.weight+arg2.weight){
 		//in this case, arg0 is either heavier than all (because np is not a problem), or (arg1 or arg2) are lighter than the rest only;
 		//therefore, in order to figure out amongst the three who the culprit is, we check against the two lighter mods first.
 		//if they are equivalent, then arg0 must be heavy.
 
 		//also note:
-		//we are only concerned with the relationship between arg1 and arg2 and no other calculation (or weigh) is made, even with the else if blocks.
-		//because basically one relationship check can have three states.  either equivalent, less than, or greater than. nothing else.
+		//we are only concerned with the relationship between arg1 and arg2 and no other calculation (or weigh) is made
+		//even though there are three operations actually occurring.  when you weigh something in real life, you can check 3 possible states
+		//1) equivalency 2) this is less than that 3) this is greater than that
 		weighs++;
-		if 	(arg1.weight == arg2.weight)
-			message += balls.indexOf(arg0) + 1 + ' is heavier than the rest. ';
-		else if (arg1.weight < arg2.weight)
-			message += balls.indexOf(arg1) + 1 + ' is lighter than the rest. ';
-		else if (arg1.weight > arg2.weight)
-			message += balls.indexOf(arg2) + 1 + ' is lighter than the rest. ';		
+		arg1.weight == 	arg2.weight ? 	message += balls.indexOf(arg0) + 1 + ' is heavier than the rest. ' : null;
+		arg1.weight < 	arg2.weight ? 	message += balls.indexOf(arg1) + 1 + ' is lighter than the rest. ' : null;
+		arg1.weight > 	arg2.weight	?	message += balls.indexOf(arg2) + 1 + ' is lighter than the rest. ' : null;
 	} else if (np.weight+arg0.weight < arg1.weight+arg2.weight){
 		//in this case, arg0 is either lighter than all (because np is not a problem), or (arg1 or arg2) are heavier than the rest only;
 		//therefore, in order to figure out amongst the three who the culprit is, we check against the two heavier mods first.
 		//if they are equivalent, then arg0 must be light.
 
 		//also note:
-		//we are only concerned with the relationship between arg1 and arg2 and no other calculation (or weigh) is made, even with the else if.
-		//because basically one relationship check can have three states.  either equivalent, less than, or greater than. nothing else.
+		//we are only concerned with the relationship between arg1 and arg2 and no other calculation (or weigh) is made
+		//even though there are three operations actually occurring.  when you weigh something in real life, you can check 3 possible states
+		//1) equivalency 2) this is less than that 3) this is greater than that
 		weighs++;
-		if 	(arg1.weight == arg2.weight)
-			message += balls.indexOf(arg0) + 1 + ' is lighter than the rest. ';
-		else if (arg1.weight < arg2.weight)
-			message += balls.indexOf(arg2) + 1 + ' is heavier than the rest. ';
-		else if (arg1.weight > arg2.weight)
-			message += balls.indexOf(arg1) + 1 + ' is heavier than the rest. ';
+		arg1.weight == 	arg2.weight ? 	message += balls.indexOf(arg0) + 1 + ' is lighter than the rest. ' : null;
+		arg1.weight > 	arg2.weight ? 	message += balls.indexOf(arg1) + 1 + ' is heavier than the rest. ' : null;
+		arg1.weight < 	arg2.weight ? 	message += balls.indexOf(arg2) + 1 + ' is heavier than the rest. ' : null;
 	}
 }
 
