@@ -1,8 +1,8 @@
 //setup
 let balls = [];
-let defweight = function(){ return { weight: 0 }};
+let ball = function(){ return { weight: 0 }};
 for (let i=0; i<8; i++){
-	balls.push(new defweight);
+	balls.push(new ball);
 }
 let randindex = Math.floor(Math.random()*(balls.length-1));
 let differentweight = Math.random() > .5 ? 1 : -1;
